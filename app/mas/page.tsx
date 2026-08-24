@@ -10,32 +10,33 @@ export const metadata: Metadata = { title: "Sobre el diario" };
 export default function MasPage() {
   return (
     <>
-      <h1 className="mb-1 mt-2 font-serif text-[28px] font-bold tracking-[-0.6px] text-ink">
+      <h1 className="mb-1 mt-2 font-display text-[28px] font-bold tracking-[-0.6px] text-ink">
         {siteConfig.name}
       </h1>
       <p className="mb-5 text-[13px] leading-snug text-muted">
         {siteBlurb}
       </p>
 
-      <div className="rounded-2xl border border-dashed border-pink/40 bg-pink/5 p-4">
-        <p className="text-[11px] font-extrabold uppercase tracking-[1px] text-pink">
+      <div className="rounded-2xl border border-dashed border-accent/40 bg-accent/5 p-4">
+        <p className="text-[11px] font-extrabold uppercase tracking-[1px] text-accent">
           Versión de demostración
         </p>
         <p className="mt-1.5 text-[13px] leading-snug text-ink">
           Esta es una maqueta funcional para revisar el diseño y la navegación.
-          Los titulares y las fotografías son de muestra: no corresponden a
-          noticias reales.
+          Algunos titulares son notas publicadas por el diario; el resto es
+          relleno de muestra. Las fotografías son de archivo y las fechas, de
+          referencia.
         </p>
       </div>
 
       <section className="mt-5 rounded-2xl bg-paper p-4 shadow-[0_3px_15px_rgba(16,24,40,.05)]">
-        <h2 className="font-serif text-[19px] font-bold text-ink">Secciones</h2>
+        <h2 className="font-display text-[19px] font-bold text-ink">Secciones</h2>
         <div className="mt-3 flex flex-wrap gap-2">
           {categories.map((c) => (
             <Link
               key={c.slug}
               href={`/seccion/${c.slug}`}
-              className="rounded-full border border-line px-3 py-2 text-[11px] font-bold text-ink transition-colors hover:border-pink hover:text-pink"
+              className="rounded-full border border-line px-3 py-2 text-[11px] font-bold text-ink transition-colors hover:border-accent hover:text-accent"
             >
               {c.name}
             </Link>
@@ -44,7 +45,7 @@ export default function MasPage() {
       </section>
 
       <section className="mt-3 rounded-2xl bg-paper p-4 shadow-[0_3px_15px_rgba(16,24,40,.05)]">
-        <h2 className="font-serif text-[19px] font-bold text-ink">Contacto</h2>
+        <h2 className="font-display text-[19px] font-bold text-ink">Contacto</h2>
         <p className="mt-1.5 text-[13px] leading-snug text-muted">
           ¿Tienes un dato, una denuncia o quieres anunciar en el diario?
           Escríbenos y te respondemos.
@@ -68,9 +69,8 @@ export default function MasPage() {
       <Newsletter />
 
       <footer className="mt-6 border-t border-line pt-4 text-center">
-        <p className="font-serif text-[17px] font-extrabold tracking-[-0.5px] text-navy">
-          {siteConfig.logo.lead}
-          <span className="text-pink">{siteConfig.logo.accent}</span>
+        <p className="font-display text-[17px] font-extrabold tracking-[-0.5px] text-petrol">
+          {siteConfig.name}
         </p>
         <p className="mt-1 text-[10px] uppercase tracking-[1.5px] text-muted">
           {siteLocationLine}

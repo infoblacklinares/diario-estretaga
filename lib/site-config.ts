@@ -5,22 +5,18 @@
  * Los colores viven en `lib/brand-colors.ts` y el contenido en `lib/data.ts`.
  */
 export const siteConfig = {
-  name: "El Estratega",
+  name: "Diario el Estratega",
 
-  /** El logotipo se dibuja en dos tonos: la primera parte en blanco y la
-   *  segunda en el color de acento. */
-  logo: {
-    lead: "EL ESTRATE",
-    accent: "GA"
-  },
-
-  tagline: "El diario de negocios independiente",
+  tagline: "Somos más que noticias",
 
   description:
-    "Noticias de Linares, la Región del Maule y Chile. Economía, política, actualidad y deportes con una mirada directa y cercana.",
+    "Noticias de Linares, la Región del Maule y Chile. Actualidad, economía, deportes, cultura y educación con una mirada regional.",
+
+  /** Razón social que aparece en el pie. */
+  legalName: "Agencia de medios digitales el Estratega",
 
   /** Firma por defecto de las notas. */
-  newsroom: "Redacción El Estratega",
+  newsroom: "Diario el Estratega",
 
   location: {
     city: "Linares",
@@ -34,11 +30,11 @@ export const siteConfig = {
   }
 } as const;
 
-/** "El Estratega · El diario de negocios independiente" */
+/** "Diario el Estratega · Somos más que noticias" */
 export const siteTitle = `${siteConfig.name} · ${siteConfig.tagline}`;
 
-/** "El diario de negocios independiente de Linares y la Región del Maule." */
-export const siteBlurb = `${siteConfig.tagline} de ${siteConfig.location.city} y la ${siteConfig.location.region}.`;
+/** Bajada corta para metadatos y para la página "Más". */
+export const siteBlurb = `${siteConfig.tagline}. Noticias de ${siteConfig.location.city} y la ${siteConfig.location.region}.`;
 
 /** "Linares · Región del Maule · Chile" */
 export const siteLocationLine = [

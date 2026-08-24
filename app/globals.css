@@ -21,7 +21,7 @@
   }
 
   ::selection {
-    @apply bg-pink text-white;
+    @apply bg-accent text-white;
   }
 }
 

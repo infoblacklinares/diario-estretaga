@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatRelative, type Article } from "@/lib/data";
+import { formatDateShort, type Article } from "@/lib/data";
 import { CategoryPill } from "./category-pill";
 import { SaveButton } from "./save-button";
 
@@ -11,8 +11,8 @@ export function StoryCard({ article }: { article: Article }) {
       <div className="flex min-w-0 flex-col">
         <CategoryPill category={article.category} variant="text" />
 
-        <h3 className="my-1.5 font-serif text-[17px] font-bold leading-[1.15] tracking-[-0.2px] text-ink sm:text-[19px]">
-          <Link href={`/nota/${article.slug}`} className="hover:text-pink">
+        <h3 className="my-1.5 font-display text-[17px] font-bold leading-[1.15] tracking-[-0.2px] text-ink sm:text-[19px]">
+          <Link href={`/nota/${article.slug}`} className="hover:text-accent">
             {/* Cubre toda la tarjeta para que el toque en móvil sea cómodo */}
             <span className="absolute inset-0 z-0" aria-hidden="true" />
             {article.title}
@@ -25,7 +25,7 @@ export function StoryCard({ article }: { article: Article }) {
 
         <div className="mt-auto flex items-center gap-1 pt-1.5">
           <span className="text-[10px] text-muted">
-            {formatRelative(article.minutesAgo)} · {article.readingMinutes} min
+            {formatDateShort(article.publishedAt)} · {article.readingMinutes} min
           </span>
           <span className="relative z-10">
             <SaveButton slug={article.slug} />

@@ -8,7 +8,7 @@ import { IconBookmark, IconDots, IconGrid, IconHome, IconPin } from "./icons";
 const items = [
   { href: "/", label: "Inicio", Icon: IconHome },
   { href: "/secciones", label: "Secciones", Icon: IconGrid },
-  { href: "/seccion/linares", label: "Linares", Icon: IconPin },
+  { href: "/seccion/comunal", label: "Comunal", Icon: IconPin },
   { href: "/guardadas", label: "Guardadas", Icon: IconBookmark },
   { href: "/mas", label: "Más", Icon: IconDots }
 ];
@@ -24,7 +24,7 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Navegación principal"
-      className="fixed inset-x-0 bottom-0 z-30 grid h-[68px] grid-cols-5 border-t border-white/10 bg-navy/95 backdrop-blur-md md:hidden"
+      className="fixed inset-x-0 bottom-0 z-30 grid h-[68px] grid-cols-5 border-t border-white/10 bg-petrol/95 backdrop-blur-md md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       {items.map(({ href, label, Icon }) => {
@@ -37,13 +37,13 @@ export function BottomNav() {
             href={href}
             aria-current={active ? "page" : undefined}
             className={`flex flex-col items-center justify-center gap-1.5 text-[10px] transition-colors ${
-              active ? "font-extrabold text-pink-light" : "text-[#aebbd0] hover:text-white"
+              active ? "font-extrabold text-accent-light" : "text-[#aebbd0] hover:text-white"
             }`}
           >
             <span className="relative h-[21px] w-[21px]">
               <Icon filled={active} />
               {showBadge && (
-                <span className="absolute -right-1.5 -top-1 min-w-[15px] rounded-full bg-pink px-1 text-[9px] font-extrabold leading-[15px] text-white">
+                <span className="absolute -right-1.5 -top-1 min-w-[15px] rounded-full bg-accent px-1 text-[9px] font-extrabold leading-[15px] text-white">
                   {saved.length}
                 </span>
               )}

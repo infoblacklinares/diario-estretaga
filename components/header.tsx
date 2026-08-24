@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   categories,
   categoryName,
-  formatRelative,
+  formatDateShort,
   searchArticles
 } from "@/lib/data";
 import { siteConfig } from "@/lib/site-config";
@@ -49,7 +49,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-gradient-to-br from-navy to-navy-light px-4 pb-3 pt-4 text-white md:px-0">
+      <header className="sticky top-0 z-30 bg-gradient-to-br from-petrol to-petrol-light px-4 pb-3 pt-4 text-white md:px-0">
         <div className="mx-auto flex w-full max-w-3xl items-center justify-between gap-3 md:px-6">
           <button
             type="button"
@@ -104,7 +104,7 @@ export function Header() {
 
       {/* ---------- Menú lateral ---------- */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 w-[80%] max-w-[320px] overflow-y-auto bg-navy px-5 py-5 text-white transition-transform duration-300 ${
+        className={`fixed inset-y-0 left-0 z-50 w-[80%] max-w-[320px] overflow-y-auto bg-petrol px-5 py-5 text-white transition-transform duration-300 ${
           panel === "menu" ? "translate-x-0" : "-translate-x-full"
         }`}
         role="dialog"
@@ -191,14 +191,14 @@ export function Header() {
                       href={`/nota/${a.slug}`}
                       className="block py-3 transition-colors hover:bg-bg"
                     >
-                      <span className="text-[10px] font-extrabold uppercase text-pink">
+                      <span className="text-[10px] font-extrabold uppercase text-accent">
                         {categoryName(a.category)}
                       </span>
-                      <p className="mt-1 font-serif text-[15px] font-bold leading-tight text-ink">
+                      <p className="mt-1 font-display text-[15px] font-bold leading-tight text-ink">
                         {a.title}
                       </p>
                       <span className="text-[10px] text-muted">
-                        {formatRelative(a.minutesAgo)}
+                        {formatDateShort(a.publishedAt)}
                       </span>
                     </Link>
                   </li>
@@ -227,7 +227,7 @@ function SectionLink({
       aria-current={active ? "page" : undefined}
       className={`whitespace-nowrap pb-2.5 text-[13px] transition-colors ${
         active
-          ? "border-b-[3px] border-pink-light font-bold text-white"
+          ? "border-b-[3px] border-accent-light font-bold text-white"
           : "text-slate-300 hover:text-white"
       }`}
     >
@@ -240,7 +240,7 @@ function MenuLink({ href, children }: { href: string; children: React.ReactNode 
   return (
     <Link
       href={href}
-      className="border-b border-white/5 py-3 font-serif text-[19px] font-bold text-white/90 transition-colors hover:text-pink-light"
+      className="border-b border-white/5 py-3 font-display text-[19px] font-bold text-white/90 transition-colors hover:text-accent-light"
     >
       {children}
     </Link>

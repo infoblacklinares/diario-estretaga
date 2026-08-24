@@ -16,7 +16,7 @@ export function TopicChips() {
           <Link
             key={topic}
             href={href}
-            className="whitespace-nowrap rounded-full border border-line bg-paper px-3.5 py-2.5 text-[11px] font-bold text-ink transition-colors hover:border-pink hover:text-pink"
+            className="whitespace-nowrap rounded-full border border-line bg-paper px-3.5 py-2.5 text-[11px] font-bold text-ink transition-colors hover:border-accent hover:text-accent"
           >
             {topic}
           </Link>

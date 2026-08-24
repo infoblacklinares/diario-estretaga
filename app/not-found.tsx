@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="rounded-2xl bg-paper p-8 text-center shadow-[0_3px_15px_rgba(16,24,40,.05)]">
-      <p className="font-serif text-[42px] font-extrabold leading-none text-navy">404</p>
-      <p className="mt-2 font-serif text-[19px] font-bold text-ink">
+      <p className="font-display text-[42px] font-extrabold leading-none text-petrol">404</p>
+      <p className="mt-2 font-display text-[19px] font-bold text-ink">
         No encontramos esta página
       </p>
       <p className="mx-auto mt-1 max-w-[280px] text-[13px] leading-snug text-muted">
@@ -12,7 +12,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="mt-4 inline-block rounded-lg bg-pink px-4 py-2.5 text-[12px] font-extrabold text-white transition-colors hover:bg-pink-light"
+        className="mt-4 inline-block rounded-lg bg-accent px-4 py-2.5 text-[12px] font-extrabold text-white transition-colors hover:bg-accent-light"
       >
         Volver a la portada
       </Link>

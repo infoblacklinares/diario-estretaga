@@ -13,7 +13,7 @@ import { IconArrowLeft } from "@/components/icons";
 import {
   articles,
   categoryName,
-  formatRelative,
+  formatDateLong,
   getBySlug,
   getRelated
 } from "@/lib/data";
@@ -83,7 +83,7 @@ export default function NotaPage({ params }: Params) {
       <article>
         <CategoryPill category={article.category} />
 
-        <h1 className="my-3 font-serif text-[30px] font-bold leading-[1.08] tracking-[-0.7px] text-ink sm:text-[38px]">
+        <h1 className="my-3 font-display text-[30px] font-bold leading-[1.08] tracking-[-0.7px] text-ink sm:text-[38px]">
           {article.title}
         </h1>
 
@@ -91,7 +91,7 @@ export default function NotaPage({ params }: Params) {
 
         <div className="my-4 flex flex-col items-start gap-1 border-y border-line py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
           <span className="text-[11px] text-muted">
-            {article.author} · {formatRelative(article.minutesAgo)} · {article.readingMinutes} min
+            {article.author} · {formatDateLong(article.publishedAt)} · {article.readingMinutes} min
           </span>
           <span className="-ml-1.5 flex items-center gap-1">
             <ShareButton title={article.title} path={path} />

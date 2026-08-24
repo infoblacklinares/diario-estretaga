@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatRelative, type Article } from "@/lib/data";
+import { formatDateShort, type Article } from "@/lib/data";
 import { CategoryPill } from "./category-pill";
 import { SaveButton } from "./save-button";
 
@@ -26,16 +26,16 @@ export function HeroStory({ article }: { article: Article }) {
           <SaveButton slug={article.slug} tone="dark" />
         </div>
 
-        <h1 className="my-2.5 font-serif text-[29px] font-bold leading-[1.06] tracking-[-0.8px] sm:text-[38px]">
+        <h1 className="my-2.5 font-display text-[24px] font-extrabold leading-[1.12] tracking-[-0.5px] line-clamp-4 sm:text-[32px]">
           <Link href={`/nota/${article.slug}`}>{article.title}</Link>
         </h1>
 
-        <p className="mb-3 text-[13px] leading-[1.45] text-gray-200 sm:text-[15px]">
+        <p className="mb-3 text-[13px] leading-[1.45] text-gray-200 line-clamp-2 sm:text-[15px]">
           {article.excerpt}
         </p>
 
         <div className="text-[10px] text-gray-300 sm:text-[11px]">
-          {formatRelative(article.minutesAgo)} · {article.readingMinutes} min de lectura
+          {formatDateShort(article.publishedAt)} · {article.readingMinutes} min de lectura
         </div>
       </div>
     </article>

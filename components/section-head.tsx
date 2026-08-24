@@ -13,7 +13,7 @@ export function SectionHead({ title, href, linkLabel = "Ver todas" }: Props) {
       {href && (
         <Link
           href={href}
-          className="text-[11px] font-bold text-pink transition-opacity hover:opacity-70"
+          className="text-[11px] font-bold text-accent transition-opacity hover:opacity-70"
         >
           {linkLabel} →
         </Link>

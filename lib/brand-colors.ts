@@ -1,21 +1,25 @@
 /**
  * PALETA DE MARCA — único lugar donde se definen los colores del diario.
- * `tailwind.config.ts` los importa desde acá, así que cambiar un valor
- * aquí lo cambia en todo el sitio.
+ * `tailwind.config.ts` los importa desde acá.
+ *
+ * Tomada de elestratega.cl: azul petróleo oscuro con acento turquesa.
+ * Los valores son una lectura de las capturas del sitio; si tienes los
+ * códigos exactos de la hoja de estilos, cámbialos aquí y se propagan
+ * a todo el sitio.
  */
 export const brandColors = {
-  navy: {
-    DEFAULT: "#071A35", // Cabecera, menú y barra inferior
-    light: "#0D294E",   // Degradado de la cabecera
-    lighter: "#123763"  // Degradado del bloque de newsletter
+  petrol: {
+    DEFAULT: "#0F3C4C", // Cabecera, menú lateral y barra inferior
+    light: "#17566B",   // Degradado de la cabecera
+    lighter: "#1D6B84"  // Degradado del bloque de newsletter
   },
-  pink: {
-    DEFAULT: "#E90069", // Acento: secciones, enlaces, marcadores
-    light: "#FF2B87"    // Acento sobre fondo oscuro
+  accent: {
+    DEFAULT: "#1E8FA8", // Subrayados de sección, etiquetas, marcadores
+    light: "#3FB6CE"    // Acento sobre fondo oscuro
   },
-  bg: "#F4F5F7",     // Fondo de las páginas
-  paper: "#FFFFFF",  // Tarjetas
-  ink: "#101828",    // Texto principal
-  muted: "#667085",  // Texto secundario y fechas
-  line: "#E5E7EB"    // Bordes y separadores
+  bg: "#F4F6F7",    // Fondo de las páginas
+  paper: "#FFFFFF", // Tarjetas
+  ink: "#0E1E26",   // Texto principal
+  muted: "#5F7480", // Texto secundario y fechas
+  line: "#E3E8EA"   // Bordes y separadores
 };

@@ -19,9 +19,9 @@ export function Newsletter() {
   }
 
   return (
-    <section className="mt-6 rounded-[18px] bg-gradient-to-br from-navy to-navy-lighter p-5 text-white shadow-[0_12px_35px_rgba(7,26,53,.10)]">
-      <p className="text-[11px] font-extrabold tracking-[1px] text-[#ff5ba2]">NEWSLETTER</p>
-      <h3 className="my-2 font-serif text-[22px] font-bold leading-tight">
+    <section className="mt-6 rounded-[18px] bg-gradient-to-br from-petrol to-petrol-lighter p-5 text-white shadow-[0_12px_35px_rgba(7,26,53,.10)]">
+      <p className="text-[11px] font-extrabold tracking-[1px] text-accent-light">NEWSLETTER</p>
+      <h3 className="my-2 font-display text-[22px] font-bold leading-tight">
         Las noticias importantes, directo a tu correo.
       </h3>
       <p className="text-[12px] leading-[1.4] text-slate-300">
@@ -30,7 +30,7 @@ export function Newsletter() {
 
       {status === "ok" ? (
         <p className="mt-4 rounded-lg bg-white/10 px-3.5 py-3 text-[12px] font-semibold">
-          ¡Listo! Te escribiremos a <span className="text-pink-light">{email}</span>.
+          ¡Listo! Te escribiremos a <span className="text-accent-light">{email}</span>.
         </p>
       ) : (
         <form onSubmit={onSubmit} className="mt-4 flex flex-col gap-2 sm:flex-row">
@@ -49,11 +49,11 @@ export function Newsletter() {
               if (status === "error") setStatus("idle");
             }}
             placeholder="tu@correo.cl"
-            className="min-w-0 flex-1 rounded-lg border border-white/15 bg-white/10 px-3.5 py-3 text-[13px] text-white placeholder:text-slate-400 outline-none focus:border-pink-light"
+            className="min-w-0 flex-1 rounded-lg border border-white/15 bg-white/10 px-3.5 py-3 text-[13px] text-white placeholder:text-slate-400 outline-none focus:border-accent-light"
           />
           <button
             type="submit"
-            className="rounded-lg bg-pink px-4 py-3 text-[11px] font-extrabold text-white transition-colors hover:bg-pink-light"
+            className="rounded-lg bg-accent px-4 py-3 text-[11px] font-extrabold text-white transition-colors hover:bg-accent-light"
           >
             Quiero suscribirme →
           </button>
@@ -61,7 +61,7 @@ export function Newsletter() {
       )}
 
       {status === "error" && (
-        <p className="mt-2 text-[11px] font-semibold text-pink-light">
+        <p className="mt-2 text-[11px] font-semibold text-accent-light">
           Revisa el correo, parece que tiene un error.
         </p>
       )}

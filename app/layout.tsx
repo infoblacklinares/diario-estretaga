@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
 import { SavedProvider } from "@/lib/saved-context";
 import { Header } from "@/components/header";
 import { BottomNav } from "@/components/bottom-nav";
@@ -10,7 +10,8 @@ import "./globals.css";
 
 /**
  * Par tipográfico del diario:
- *  · Fraunces (serif con carácter) para titulares
+ *  · Archivo (grotesco de prensa) para titulares — acompaña el tono
+ *    del diario, que usa titulares en sans de peso, no en serif
  *  · Inter (sans de alta legibilidad) para cuerpo e interfaz
  * next/font las descarga en build y las sirve desde el propio dominio:
  * cero peticiones a Google en producción y sin salto de layout.
@@ -21,9 +22,9 @@ const inter = Inter({
   display: "swap"
 });
 
-const fraunces = Fraunces({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-display",
   display: "swap"
 });
 
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: brandColors.navy.DEFAULT,
+  themeColor: brandColors.petrol.DEFAULT,
   width: "device-width",
   initialScale: 1
 };
@@ -68,7 +69,7 @@ export default function RootLayout({
   children
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es-CL" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="es-CL" className={`${inter.variable} ${archivo.variable}`}>
       <head>
         <script
           type="application/ld+json"

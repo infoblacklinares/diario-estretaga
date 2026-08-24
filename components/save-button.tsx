@@ -15,7 +15,7 @@ export function SaveButton({ slug, tone = "light", withLabel = false }: Props) {
   const active = isSaved(slug);
 
   const color = active
-    ? "text-pink"
+    ? "text-accent"
     : tone === "dark"
       ? "text-white/80 hover:text-white"
       : "text-muted hover:text-ink";

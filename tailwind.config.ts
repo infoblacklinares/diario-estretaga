@@ -12,7 +12,7 @@ const config: Config = {
       colors: brandColors,
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"]
+        display: ["var(--font-display)", "system-ui", "sans-serif"]
       },
       keyframes: {
         // Franja de última hora

@@ -35,7 +35,7 @@ export default function SeccionPage({ params }: Params) {
   return (
     <>
       <header className="mb-4 mt-2">
-        <h1 className="font-serif text-[28px] font-bold tracking-[-0.6px] text-ink">
+        <h1 className="font-display text-[28px] font-bold tracking-[-0.6px] text-ink">
           {category.name}
         </h1>
         <p className="mt-1 text-[13px] text-muted">{category.description}</p>

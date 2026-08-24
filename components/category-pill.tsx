@@ -13,7 +13,7 @@ export function CategoryPill({ category, variant = "solid" }: Props) {
 
   if (variant === "text") {
     return (
-      <span className="text-[10px] font-extrabold uppercase tracking-[0.4px] text-pink">
+      <span className="text-[10px] font-extrabold uppercase tracking-[0.4px] text-accent">
         {label}
       </span>
     );
@@ -22,7 +22,7 @@ export function CategoryPill({ category, variant = "solid" }: Props) {
   return (
     <Link
       href={`/seccion/${category}`}
-      className="inline-block rounded-md bg-pink px-2.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.4px] text-white transition-colors hover:bg-pink-light"
+      className="inline-block rounded-md bg-accent px-2.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.4px] text-white transition-colors hover:bg-accent-light"
     >
       {label}
     </Link>
