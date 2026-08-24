@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import { SavedProvider } from "@/lib/saved-context";
 import { Header } from "@/components/header";
 import { BottomNav } from "@/components/bottom-nav";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 /**
@@ -24,7 +25,7 @@ const fraunces = Fraunces({
   display: "swap"
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://elestratega.cl";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
