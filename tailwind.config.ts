@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { brandColors } from "./lib/brand-colors";
 
 const config: Config = {
   content: [
@@ -8,23 +9,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        // Marca El Estratega — azul editorial + magenta
-        navy: {
-          DEFAULT: "#071A35",
-          light: "#0D294E",
-          lighter: "#123763"
-        },
-        pink: {
-          DEFAULT: "#E90069",
-          light: "#FF2B87"
-        },
-        bg: "#F4F5F7",
-        paper: "#FFFFFF",
-        ink: "#101828",
-        muted: "#667085",
-        line: "#E5E7EB"
-      },
+      colors: brandColors,
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Georgia", "serif"]

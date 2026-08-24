@@ -6,6 +6,7 @@ import { SectionHead } from "@/components/section-head";
 import { StoryCard } from "@/components/story-card";
 import { TopicChips } from "@/components/topic-chips";
 import { getFeatured, getLatest } from "@/lib/data";
+import { siteConfig } from "@/lib/site-config";
 
 export default function PortadaPage() {
   const featured = getFeatured();
@@ -31,7 +32,7 @@ export default function PortadaPage() {
         <StoryCard key={article.slug} article={article} />
       ))}
 
-      <SectionHead title="Explora El Estratega" />
+      <SectionHead title={`Explora ${siteConfig.name}`} />
       <TopicChips />
 
       <Newsletter />

@@ -17,6 +17,7 @@ import {
   getBySlug,
   getRelated
 } from "@/lib/data";
+import { siteConfig } from "@/lib/site-config";
 
 type Params = { params: { slug: string } };
 
@@ -57,7 +58,7 @@ export default function NotaPage({ params }: Params) {
     image: [article.image],
     articleSection: categoryName(article.category),
     author: { "@type": "Organization", name: article.author },
-    publisher: { "@type": "NewsMediaOrganization", name: "El Estratega" }
+    publisher: { "@type": "NewsMediaOrganization", name: siteConfig.name }
   };
 
   return (

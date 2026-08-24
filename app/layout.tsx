@@ -4,6 +4,8 @@ import { SavedProvider } from "@/lib/saved-context";
 import { Header } from "@/components/header";
 import { BottomNav } from "@/components/bottom-nav";
 import { getSiteUrl } from "@/lib/site-url";
+import { siteConfig, siteTitle, siteBlurb } from "@/lib/site-config";
+import { brandColors } from "@/lib/brand-colors";
 import "./globals.css";
 
 /**
@@ -30,19 +32,17 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "El Estratega · El diario de negocios independiente",
-    template: "%s · El Estratega"
+    default: siteTitle,
+    template: `%s · ${siteConfig.name}`
   },
-  description:
-    "Noticias de Linares, la Región del Maule y Chile. Economía, política, actualidad y deportes con una mirada directa y cercana.",
+  description: siteConfig.description,
   openGraph: {
     type: "website",
     locale: "es_CL",
     url: siteUrl,
-    siteName: "El Estratega",
-    title: "El Estratega · El diario de negocios independiente",
-    description:
-      "Noticias de Linares, la Región del Maule y Chile. Economía, política, actualidad y deportes."
+    siteName: siteConfig.name,
+    title: siteTitle,
+    description: siteConfig.description
   },
   // Mientras sea maqueta no queremos que Google la indexe.
   // Al salir a producción: { index: true, follow: true }
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#071A35",
+  themeColor: brandColors.navy.DEFAULT,
   width: "device-width",
   initialScale: 1
 };
@@ -58,10 +58,10 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "NewsMediaOrganization",
-  name: "El Estratega",
-  description: "El diario de negocios independiente de Linares y la Región del Maule.",
+  name: siteConfig.name,
+  description: siteBlurb,
   url: siteUrl,
-  areaServed: "Región del Maule, Chile"
+  areaServed: `${siteConfig.location.region}, ${siteConfig.location.country}`
 };
 
 export default function RootLayout({

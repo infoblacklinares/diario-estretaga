@@ -53,20 +53,29 @@ app/
   mas/                # Sobre el diario y contacto
 components/           # Cabecera, tarjetas, iconos, newsletter...
 lib/
+  site-config.ts      # ← IDENTIDAD (nombre, logo, lema)
+  brand-colors.ts     # ← PALETA
   data.ts             # ← TODO EL CONTENIDO
   saved-context.tsx   # Notas guardadas (localStorage)
+  site-url.ts         # URL pública, tolerante a errores de tipeo
 ```
 
 ## Dónde se edita cada cosa
 
 | Quiero cambiar... | Archivo |
 |---|---|
+| Nombre, logo, lema, ubicación, WhatsApp | `lib/site-config.ts` |
+| Colores de marca | `lib/brand-colors.ts` |
 | Titulares, bajadas, fotos, secciones | `lib/data.ts` |
-| Colores de marca y tipografías | `tailwind.config.ts` |
+| Tipografías | `app/layout.tsx` |
 | Cabecera, menú y buscador | `components/header.tsx` |
 | Barra inferior | `components/bottom-nav.tsx` |
 | Espacios publicitarios | `components/ad-slot.tsx` |
 | Título y descripción del sitio | `app/layout.tsx` |
+
+La identidad del diario está centralizada: **`lib/site-config.ts`** (nombre,
+logo, lema, ubicación) y **`lib/brand-colors.ts`** (paleta, que `tailwind.config.ts`
+importa). Cambiar de marca no obliga a tocar los componentes.
 
 `lib/data.ts` es la única fuente de contenido: los componentes no conocen
 ninguna noticia concreta. Por eso conectar un CMS más adelante no obliga a

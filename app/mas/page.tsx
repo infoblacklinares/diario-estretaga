@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Newsletter } from "@/components/newsletter";
 import { IconWhatsapp } from "@/components/icons";
 import { categories } from "@/lib/data";
+import { siteConfig, siteBlurb, siteLocationLine } from "@/lib/site-config";
 
 export const metadata: Metadata = { title: "Sobre el diario" };
 
@@ -10,10 +11,10 @@ export default function MasPage() {
   return (
     <>
       <h1 className="mb-1 mt-2 font-serif text-[28px] font-bold tracking-[-0.6px] text-ink">
-        El Estratega
+        {siteConfig.name}
       </h1>
       <p className="mb-5 text-[13px] leading-snug text-muted">
-        El diario de negocios independiente de Linares y la Región del Maule.
+        {siteBlurb}
       </p>
 
       <div className="rounded-2xl border border-dashed border-pink/40 bg-pink/5 p-4">
@@ -49,7 +50,7 @@ export default function MasPage() {
           Escríbenos y te respondemos.
         </p>
         <a
-          href="https://wa.me/56900000000"
+          href={`https://wa.me/${siteConfig.contact.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-4 py-2.5 text-[12px] font-extrabold text-white transition-opacity hover:opacity-90"
@@ -68,10 +69,11 @@ export default function MasPage() {
 
       <footer className="mt-6 border-t border-line pt-4 text-center">
         <p className="font-serif text-[17px] font-extrabold tracking-[-0.5px] text-navy">
-          EL ESTRATE<span className="text-pink">GA</span>
+          {siteConfig.logo.lead}
+          <span className="text-pink">{siteConfig.logo.accent}</span>
         </p>
         <p className="mt-1 text-[10px] uppercase tracking-[1.5px] text-muted">
-          Linares · Región del Maule · Chile
+          {siteLocationLine}
         </p>
       </footer>
     </>

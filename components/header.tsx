@@ -9,6 +9,7 @@ import {
   formatRelative,
   searchArticles
 } from "@/lib/data";
+import { siteConfig } from "@/lib/site-config";
 import { Brand } from "./brand";
 import { IconClose, IconMenu, IconSearch } from "./icons";
 
@@ -159,7 +160,7 @@ export function Header() {
               enterKeyHint="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar en El Estratega…"
+              placeholder={`Buscar en ${siteConfig.name}…`}
               aria-label="Buscar noticias"
               className="min-w-0 flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-muted"
             />

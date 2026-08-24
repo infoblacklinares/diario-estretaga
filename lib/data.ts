@@ -12,6 +12,8 @@
  * no cambian.
  */
 
+import { siteConfig } from "./site-config";
+
 export type CategorySlug =
   | "nacional"
   | "regional"
@@ -99,7 +101,7 @@ export const articles: Article[] = [
     category: "actualidad",
     image: PHOTO.ciudad,
     imageAlt: "Vista de la ciudad al atardecer",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 18,
     readingMinutes: 4,
     featured: true,
@@ -113,7 +115,7 @@ export const articles: Article[] = [
     category: "regional",
     image: PHOTO.calle,
     imageAlt: "Calle céntrica con transeúntes",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 32,
     readingMinutes: 3,
     breaking: true,
@@ -126,7 +128,7 @@ export const articles: Article[] = [
     category: "economia",
     image: PHOTO.economia,
     imageAlt: "Gráficos financieros en una pantalla",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 60,
     readingMinutes: 5,
     body: CUERPO_DEMO
@@ -138,7 +140,7 @@ export const articles: Article[] = [
     category: "politica",
     image: PHOTO.politica,
     imageAlt: "Fachada de un edificio institucional",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 120,
     readingMinutes: 6,
     body: CUERPO_DEMO
@@ -150,7 +152,7 @@ export const articles: Article[] = [
     category: "deportes",
     image: PHOTO.deportes,
     imageAlt: "Estadio de fútbol",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 180,
     readingMinutes: 3,
     body: CUERPO_DEMO
@@ -162,7 +164,7 @@ export const articles: Article[] = [
     category: "linares",
     image: PHOTO.calle,
     imageAlt: "Trabajos en la vía pública",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 240,
     readingMinutes: 4,
     body: CUERPO_DEMO
@@ -174,7 +176,7 @@ export const articles: Article[] = [
     category: "economia",
     image: PHOTO.economia,
     imageAlt: "Local comercial abierto",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 300,
     readingMinutes: 5,
     body: CUERPO_DEMO
@@ -186,7 +188,7 @@ export const articles: Article[] = [
     category: "nacional",
     image: PHOTO.ciudad,
     imageAlt: "Panorámica urbana",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 360,
     readingMinutes: 3,
     body: CUERPO_DEMO
@@ -198,7 +200,7 @@ export const articles: Article[] = [
     category: "regional",
     image: PHOTO.politica,
     imageAlt: "Patrulla en la vía pública",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 420,
     readingMinutes: 4,
     body: CUERPO_DEMO
@@ -210,7 +212,7 @@ export const articles: Article[] = [
     category: "actualidad",
     image: PHOTO.ciudad,
     imageAlt: "Paisaje natural del valle",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 480,
     readingMinutes: 4,
     body: CUERPO_DEMO
@@ -222,7 +224,7 @@ export const articles: Article[] = [
     category: "linares",
     image: PHOTO.politica,
     imageAlt: "Sala de sesiones",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 540,
     readingMinutes: 6,
     body: CUERPO_DEMO
@@ -234,7 +236,7 @@ export const articles: Article[] = [
     category: "deportes",
     image: PHOTO.deportes,
     imageAlt: "Entrenamiento en cancha",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 600,
     readingMinutes: 3,
     body: CUERPO_DEMO
@@ -246,7 +248,7 @@ export const articles: Article[] = [
     category: "nacional",
     image: PHOTO.politica,
     imageAlt: "Edificio del Congreso",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 720,
     readingMinutes: 7,
     body: CUERPO_DEMO
@@ -258,7 +260,7 @@ export const articles: Article[] = [
     category: "regional",
     image: PHOTO.calle,
     imageAlt: "Campos de cultivo",
-    author: "Redacción El Estratega",
+    author: siteConfig.newsroom,
     minutesAgo: 840,
     readingMinutes: 5,
     body: CUERPO_DEMO
